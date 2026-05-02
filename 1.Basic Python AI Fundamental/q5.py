@@ -1,14 +1,28 @@
-#5
+class SimpleAIAgent:
+    def perceive(self, environment):
+        return environment
 
-# Simple AI Agent (Temperature Control)
+    def act(self, perception):
+        # Simple decision rules
+        if perception == "hungry":
+            return "Eat food"
+        elif perception == "tired":
+            return "Take rest"
+        elif perception == "study time":
+            return "Start studying"
+        elif perception == "thirsty":
+            return "Drink water"
+        else:
+            return "Do nothing"
 
-temperature = int(input("Enter room temperature: "))
+# Create agent
+agent = SimpleAIAgent()
 
-if temperature > 30:
-    print("AI Agent: Turn ON the Air Conditioner")
+# Simulated environment inputs
+environments = ["hungry", "tired", "study time", "thirsty", "idle"]
 
-elif temperature < 20:
-    print("AI Agent: Turn ON the Heater")
-
-else:
-    print("AI Agent: Temperature is Normal")
+# Run agent
+for env in environments:
+    perception = agent.perceive(env)
+    action = agent.act(perception)
+    print(f"Environment: {env} → Action: {action}")
