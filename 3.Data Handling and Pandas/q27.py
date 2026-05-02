@@ -1,14 +1,22 @@
+#Q27 Write a Python program to create a frequency distribution
 import pandas as pd
-import matplotlib.pyplot as plt
-# Load the dataset
-data = pd.read_csv('iris.csv', header=None, names=['SepalLength', 'SepalWidth',
-'PetalLength', 'PetalWidth', 'Species'])
-# Frequency Table
-frequency_table = data['Species'].value_counts()
-print(frequency_table)
-# Bar Plot
-frequency_table.plot(kind='bar', color='skyblue')
-plt.title("Frequency Distribution of Species")
-plt.xlabel("Species")
-plt.ylabel("Count")
-plt.show()
+
+# Load dataset
+df = pd.read_csv("Mall_Customers.csv")
+
+# -------------------------------
+# 1. Simple Frequency
+# -------------------------------
+print("Spending Score Frequency:\n")
+freq1 = df['Spending Score (1-100)'].value_counts().sort_index()
+print(freq1)
+
+# -------------------------------
+# 2. Grouped Frequency (Age)
+# -------------------------------
+bins = [0, 20, 30, 40, 50, 60, 100]
+age_group = pd.cut(df['Age'], bins)
+
+print("\nAge Group Frequency:\n")
+freq2 = age_group.value_counts()
+print(freq2)

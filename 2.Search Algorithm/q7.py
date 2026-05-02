@@ -9,7 +9,7 @@ graph = {
     '20': []
 }
 
-def dfs(node, visited):
+def depth_first_search(node, visited):
     visited.add(node)
     print(node, end=" ")
 
@@ -20,4 +20,4 @@ def dfs(node, visited):
 # Function call
 print("DFS Traversal:")
 visited = set()
-dfs('5', visited)
+depth_first_search('5', visited)

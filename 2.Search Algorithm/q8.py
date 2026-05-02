@@ -2,7 +2,7 @@
 
 # Depth-Limited Search (DLS) using recursion
 
-def dls(graph, node, goal, limit, visited):
+def depth_limited_search(graph, node, goal, limit, visited):
     print(node, end=" ")
 
     if node == goal:
@@ -15,7 +15,7 @@ def dls(graph, node, goal, limit, visited):
 
     for neighbor in graph[node]:
         if neighbor not in visited:
-            found = dls(graph, neighbor, goal, limit - 1, visited)
+            found = depth_limited_search(graph, neighbor, goal, limit - 1, visited)
             if found:
                 return True
 
@@ -40,7 +40,7 @@ limit = 3   # Depth limit
 visited = set()
 
 print("DLS Traversal:")
-found = dls(graph, start, goal, limit, visited)
+found = depth_limited_search(graph, start, goal, limit, visited)
 
 if found:
     print("\nGoal node found within depth limit!")

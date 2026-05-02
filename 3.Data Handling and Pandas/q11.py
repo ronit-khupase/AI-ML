@@ -1,4 +1,6 @@
 # Import necessary libraries
+#Write a Python program to import necessary libraries and describe DataFrame attributes
+#(head, tail, shape, info, describe, columns).
 import pandas as pd
 
 # Create a sample dataset (or you can use pd.read_csv('file.csv'))

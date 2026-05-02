@@ -1,20 +1,10 @@
-# Import required libraries
+#Write a Python program to import CSV file and calculate measures of central tendency.
 import pandas as pd
-from scipy import stats
 
-# Load the dataset
-data = pd.read_csv(
-    'iris.csv',
-    header=None,
-    names=['SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species']
-)
+# Read CSV file
+df = pd.read_csv("Mall_Customers.csv")
 
-# Calculate mean, median, and mode for SepalLength
-mean = data['SepalLength'].mean()
-median = data['SepalLength'].median()
-mode = stats.mode(data['SepalLength'])
-
-# Display results
-print(f"Mean: {mean}")
-print(f"Median: {median}")
-print(f"Mode: {mode.mode[0]}")
+# Calculate measures
+print("Mean:\n", df.mean(numeric_only=True))
+print("\nMedian:\n", df.median(numeric_only=True))
+print("\nMode:\n", df.mode(numeric_only=True))
